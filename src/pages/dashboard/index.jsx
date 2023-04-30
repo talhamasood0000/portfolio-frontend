@@ -1,8 +1,9 @@
+import navbar from "@/components/navbar";
 const  Dashboard= () => {
     return ( 
         <>
             <div>
-                Hello World
+                This is the main component
             </div>
         </>
     );
