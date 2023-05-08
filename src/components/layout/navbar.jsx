@@ -90,6 +90,28 @@ const Navbar = () => {
             </>
           )}
         </Toolbar>
+        <Drawer
+          anchor="right"
+          open={open}
+          onClose={() => handleDrawerClose()}
+          classes={{ paper: classes.paper }}
+        >
+          <IconButton 
+            style={{ marginTop: '1rem', marginLeft: '0.5rem' }}
+            onClick={()=> handleDrawerClose()}
+          >
+                  <Close style={{ color: 'eeeee4' }}></Close>
+          </IconButton>
+          <List>
+            {PAGES.map((item, index) => (
+              <ListItemButton key={index}>
+                <ListItemIcon>
+                  <ListItemText  primary={<Typography style={{ color: '#eeeee4' }}>{item}</Typography>} />
+                </ListItemIcon>
+              </ListItemButton>
+            ))}
+          </List>
+        </Drawer>
       </AppBar>
     </>
   );
