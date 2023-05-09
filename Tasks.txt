@@ -1,0 +1,5 @@
+1. Add Correct Tabs in Navbar
+2. Add an animated hamburger button
+3. Add Theme to website
+4. Add Font Family to website
+5. 
