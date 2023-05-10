@@ -27,6 +27,43 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 const drawerWidth = 240;
 const PAGES = ["Products", "Services", "About", "Contact Us"];
 
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: "auto",
+  },
+  paper: {
+    background: "#063970",
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+    right: 0,
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+  },
+  menuButton: {
+    marginLeft: "auto",
+    color: "#eeeee4",
+    fontSize: "2rem",
+  },
+  tabs: {
+    marginLeft: "auto",
+  },
+  tab: {
+    textTransform: "none",
+    minWidth: "80px",
+    color: "#eeeee4",
+  },
+});
 
 const Navbar = () => {
   const [tabUnderline, setTabUnderline] = useState();
