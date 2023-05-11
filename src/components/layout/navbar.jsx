@@ -1,28 +1,26 @@
 import React from "react";
 import { useState } from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import { ShoppingCartCheckout } from "@mui/icons-material";
+import Drawer from "@mui/material/Drawer";
+import { ListItemButton, Typography } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+
+import { makeStyles } from "@mui/styles";
+import { Close, MenuOpenRounded } from "@mui/icons-material";
+
 import Image from "next/image";
 import logo from "../../media/test.svg";
 import logo1 from "../../media/download.svg";
-import { makeStyles } from "@mui/styles";
-import Drawer from "@mui/material/Drawer";
-import { Close } from "@mui/icons-material";
-import { Inbox, Drafts } from "@mui/icons-material";
-import { ListItemButton, Typography } from "@mui/material";
-import { MenuOpenRounded } from "@mui/icons-material";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 const drawerWidth = 240;
 const PAGES = ["Products", "Services", "About", "Contact Us"];
@@ -39,7 +37,6 @@ const useStyles = makeStyles({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
   },
   drawerPaper: {
     width: drawerWidth,
@@ -59,17 +56,18 @@ const useStyles = makeStyles({
     marginLeft: "auto",
   },
   tab: {
-    textTransform: "none",
     minWidth: "80px",
     color: "#eeeee4",
   },
 });
 
 const Navbar = () => {
-  const [tabUnderline, setTabUnderline] = useState();
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
   const theme = useTheme();
+
+  const [tabUnderline, setTabUnderline] = useState();
+  const [open, setOpen] = useState(false);
+
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleDrawerOpen = () => {
@@ -111,7 +109,12 @@ const Navbar = () => {
                 className={classes.tabs}
                 value={tabUnderline}
                 textColor="#eeeee4"
-                sx={{marginLeft: "auto", color:"#eeeee4"}}
+                TabIndicatorProps={{
+                  style: {
+                    backgroundColor: "#eeeee4"
+                  }
+                }}
+                sx={{marginLeft: "auto"}}
                 onChange={(e, value) => setTabUnderline(value)}
               >
                 {PAGES.map((item, index) => (
