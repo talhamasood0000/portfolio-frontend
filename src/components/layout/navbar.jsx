@@ -93,9 +93,10 @@ const Navbar = () => {
           </IconButton>
           {isMatch ? (
             <Tabs
-              textColor="eeeee4"
+              textColor="#eeeee4"
               indicatorColor="secondary"
               className={classes.tabs}
+              sx={{color:"#eeeee4"}}
             >
               <IconButton
                 className={classes.menuButton}
@@ -109,12 +110,8 @@ const Navbar = () => {
               <Tabs
                 className={classes.tabs}
                 value={tabUnderline}
-                textColor="eeeee4"
-                TabIndicatorProps={{
-                  style: {
-                    backgroundColor: "#eeeee4",
-                  },
-                }}
+                textColor="#eeeee4"
+                sx={{marginLeft: "auto", color:"#eeeee4"}}
                 onChange={(e, value) => setTabUnderline(value)}
               >
                 {PAGES.map((item, index) => (
@@ -141,7 +138,7 @@ const Navbar = () => {
           </IconButton>
           <List>
             {PAGES.map((item, index) => (
-              <ListItemButton key={index}>
+              <ListItemButton key={index} onClick={()=>handleDrawerClose()}>
                 <ListItemIcon>
                   <ListItemText  primary={<Typography style={{ color: '#eeeee4' }}>{item}</Typography>} />
                 </ListItemIcon>
