@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
+import Container from "@mui/material/Container";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import Stack from "@mui/material/Stack";
 import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -27,29 +29,13 @@ const drawerWidth = 240;
 const PAGES = ["Products", "Services", "About", "Contact Us"];
 
 const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: "auto",
-  },
   paper: {
     background: "#063970",
-  },
-  drawer: {
-    width: drawerWidth,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-    right: 0,
   },
   menuButton: {
     marginLeft: "auto",
     color: "#eeeee4",
     fontSize: "2rem",
-  },
-  tabs: {
-    marginLeft: "auto",
   },
   tab: {
     minWidth: "80px",
@@ -78,74 +64,82 @@ const Navbar = () => {
     <>
       <Box>
         <AppBar sx={{ background: "#063970", position: "static" }}>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="menu"
-              className={classes.logo}
-            >
-              <Image src={logo} alt="Logo" width={70} />
-            </IconButton>
-            {isMatch ? (
-              <Tabs
-                textColor="#eeeee4"
-                indicatorColor="secondary"
-                className={classes.tabs}
-                sx={{color:"#eeeee4"}}
+          <Container>
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                aria-label="menu"
+                className={classes.logo}
               >
-                <IconButton
-                  className={classes.menuButton}
-                  onClick={handleDrawerOpen}
-                >
-                  <MenuOpenRounded />
-                </IconButton>
-              </Tabs>
-            ) : (
-              <>
+                <Image src={logo} alt="Logo" width={70} />
+              </IconButton>
+              {isMatch ? (
                 <Tabs
-                  className={classes.tabs}
-                  value={tabUnderline}
                   textColor="#eeeee4"
-                  TabIndicatorProps={{
-                    style: {
-                      backgroundColor: "#eeeee4"
-                    }
-                  }}
-                  sx={{marginLeft: "auto"}}
-                  onChange={(e, value) => setTabUnderline(value)}
+                  indicatorColor="secondary"
+                  className={classes.tabs}
+                  sx={{ color: "#eeeee4" }}
                 >
-                  {PAGES.map((item, index) => (
-                    <Tab key={index} label={item} className={classes.tab} />
-                  ))}
+                  <IconButton
+                    className={classes.menuButton}
+                    onClick={handleDrawerOpen}
+                  >
+                    <MenuOpenRounded />
+                  </IconButton>
                 </Tabs>
-                <Button variant="contained" className={classes.button}>
-                  Resume
-                </Button>
-              </>
-            )}
-          </Toolbar>
-          <Drawer
+              ) : (
+                <>
+                  <Tabs
+                      className={classes.tabs}
+                      value={tabUnderline}
+                      textColor="#eeeee4"
+                      TabIndicatorProps={{
+                        style: {
+                          backgroundColor: "#eeeee4",
+                        },
+                      }}
+                      sx={{ marginLeft: "auto" }}
+                      onChange={(e, value) => setTabUnderline(value)}
+                    >
+                      {PAGES.map((item, index) => (
+                        <Tab key={index} label={item} className={classes.tab} />
+                      ))}
+                    </Tabs>
+                    <Button variant="contained" className={classes.button}>
+                      Resume
+                    </Button>
+                </>
+              )}
+            </Toolbar>
+          </Container>
+          {/* <Drawer
             anchor="right"
             open={open}
             onClose={() => handleDrawerClose()}
             classes={{ paper: classes.paper }}
           >
-            <IconButton 
-              style={{ marginTop: '1rem', marginLeft: '0.5rem' }}
-              onClick={()=> handleDrawerClose()}
+            <IconButton
+              style={{ marginTop: "1rem", marginLeft: "0.5rem" }}
+              onClick={() => handleDrawerClose()}
             >
-                    <Close style={{ color: '#eeeee4' }}></Close>
+              <Close style={{ color: "#eeeee4" }}></Close>
             </IconButton>
             <List>
               {PAGES.map((item, index) => (
-                <ListItemButton key={index} onClick={()=>handleDrawerClose()}>
+                <ListItemButton key={index} onClick={() => handleDrawerClose()}>
                   <ListItemIcon>
-                    <ListItemText  primary={<Typography style={{ color: '#eeeee4' }}>{item}</Typography>} />
+                    <ListItemText
+                      primary={
+                        <Typography style={{ color: "#eeeee4" }}>
+                          {item}
+                        </Typography>
+                      }
+                    />
                   </ListItemIcon>
                 </ListItemButton>
               ))}
             </List>
-          </Drawer>
+          </Drawer> */}
         </AppBar>
       </Box>
     </>
