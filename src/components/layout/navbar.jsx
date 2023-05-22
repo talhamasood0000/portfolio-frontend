@@ -112,7 +112,7 @@ const Navbar = () => {
               )}
             </Toolbar>
           </Container>
-          {/* <Drawer
+          <Drawer
             anchor="right"
             open={open}
             onClose={() => handleDrawerClose()}
@@ -139,7 +139,7 @@ const Navbar = () => {
                 </ListItemButton>
               ))}
             </List>
-          </Drawer> */}
+          </Drawer>
         </AppBar>
       </Box>
     </>
