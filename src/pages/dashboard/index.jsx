@@ -14,9 +14,9 @@ const Dashboard = () => {
         <Stack>
           <Navbar />
           <Banner />
-          {/* <Projects /> */}
+          {/* <Projects />
           <Blogs />
-          <Footer />
+          <Footer /> */}
         </Stack>
       </ThemeProvider>
     </>
