@@ -1,20 +1,24 @@
 import React from "react";
 import { useState } from "react";
 
-import Container from "@mui/material/Container";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Stack from "@mui/material/Stack";
-import List from "@mui/material/List";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Drawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
-import { ListItemButton, Typography } from "@mui/material";
+import {
+  Container,
+  AppBar,
+  Toolbar,
+  Stack,
+  List,
+  ListItemIcon,
+  ListItemText,
+  Tabs,
+  Tab,
+  Button,
+  IconButton,
+  Drawer,
+  Box,
+  ListItemButton,
+  Typography,
+} from "@mui/material";
+
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 
@@ -90,24 +94,24 @@ const Navbar = () => {
               ) : (
                 <>
                   <Tabs
-                      className={classes.tabs}
-                      value={tabUnderline}
-                      textColor="#eeeee4"
-                      TabIndicatorProps={{
-                        style: {
-                          backgroundColor: "#eeeee4",
-                        },
-                      }}
-                      sx={{ marginLeft: "auto" }}
-                      onChange={(e, value) => setTabUnderline(value)}
-                    >
-                      {PAGES.map((item, index) => (
-                        <Tab key={index} label={item} className={classes.tab} />
-                      ))}
-                    </Tabs>
-                    <Button variant="contained" className={classes.button}>
-                      Resume
-                    </Button>
+                    className={classes.tabs}
+                    value={tabUnderline}
+                    textColor="#eeeee4"
+                    TabIndicatorProps={{
+                      style: {
+                        backgroundColor: "#eeeee4",
+                      },
+                    }}
+                    sx={{ marginLeft: "auto" }}
+                    onChange={(e, value) => setTabUnderline(value)}
+                  >
+                    {PAGES.map((item, index) => (
+                      <Tab key={index} label={item} className={classes.tab} />
+                    ))}
+                  </Tabs>
+                  <Button variant="contained" className={classes.button}>
+                    Resume
+                  </Button>
                 </>
               )}
             </Toolbar>
