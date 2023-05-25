@@ -29,7 +29,6 @@ import Image from "next/image";
 import logo from "../../media/test.svg";
 import logo1 from "../../media/download.svg";
 
-const drawerWidth = 240;
 const PAGES = ["Products", "Services", "About", "Contact Us"];
 
 const useStyles = makeStyles({
