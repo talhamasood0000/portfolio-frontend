@@ -13,8 +13,8 @@ const Dashboard = () => {
       <ThemeProvider theme={theme}>
         <Stack>
           <Navbar />
-          <Banner />
-          {/* <Projects />
+          {/* <Banner />
+          <Projects />
           <Blogs />
           <Footer /> */}
         </Stack>

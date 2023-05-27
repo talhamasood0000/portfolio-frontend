@@ -24,7 +24,7 @@ export default function Blogs() {
         <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
           My Blogs
         </Typography>
-        <Stack
+        <Stack 
           direction="row"
           justifyContent="center"
           alignItems="flex-start"
