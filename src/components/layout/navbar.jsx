@@ -31,23 +31,7 @@ import logo1 from "../../media/download.svg";
 
 const PAGES = ["Products", "Services", "About", "Contact Us"];
 
-const useStyles = makeStyles({
-  paper: {
-    background: "#063970",
-  },
-  menuButton: {
-    marginLeft: "auto",
-    color: "#eeeee4",
-    fontSize: "2rem",
-  },
-  tab: {
-    minWidth: "80px",
-    color: "#eeeee4",
-  },
-});
-
 const Navbar = () => {
-  const classes = useStyles();
   const theme = useTheme();
 
   const [tabUnderline, setTabUnderline] = useState();
@@ -66,26 +50,18 @@ const Navbar = () => {
   return (
     <>
       <Box>
-        <AppBar sx={{ background: "#063970", position: "static" }}>
+        <AppBar color="primary" sx={{ position: "static" }}>
           <Container>
             <Toolbar>
-              <IconButton
-                color="inherit"
-                aria-label="menu"
-                className={classes.logo}
-              >
+              <IconButton aria-label="menu">
                 <Image src={logo} alt="Logo" width={70} />
               </IconButton>
               {isMatch ? (
-                <Tabs
-                  textColor="#eeeee4"
-                  indicatorColor="secondary"
-                  className={classes.tabs}
-                  sx={{ color: "#eeeee4" }}
-                >
+                <Tabs sx={{ marginLeft: "auto" }}>
                   <IconButton
-                    className={classes.menuButton}
+                    sx={{ marginLeft: "auto", fontSize: "2rem" }}
                     onClick={handleDrawerOpen}
+                    color="secondary"
                   >
                     <MenuOpenRounded />
                   </IconButton>
@@ -93,22 +69,24 @@ const Navbar = () => {
               ) : (
                 <>
                   <Tabs
-                    className={classes.tabs}
                     value={tabUnderline}
-                    textColor="#eeeee4"
-                    TabIndicatorProps={{
-                      style: {
-                        backgroundColor: "#eeeee4",
-                      },
-                    }}
-                    sx={{ marginLeft: "auto" }}
                     onChange={(e, value) => setTabUnderline(value)}
+                    textColor="secondary"
+                    indicatorColor="secondary"
+                    sx={{ marginLeft: "auto" }}
                   >
                     {PAGES.map((item, index) => (
-                      <Tab key={index} label={item} className={classes.tab} />
+                      <Tab
+                        key={index}
+                        label={item}
+                        sx={{
+                          color: theme.palette.secondary.main,
+                          minWidth: "80px",
+                        }}
+                      />
                     ))}
                   </Tabs>
-                  <Button variant="contained" className={classes.button}>
+                  <Button variant="outlined" color="secondary">
                     Resume
                   </Button>
                 </>
@@ -119,13 +97,18 @@ const Navbar = () => {
             anchor="right"
             open={open}
             onClose={() => handleDrawerClose()}
-            classes={{ paper: classes.paper }}
+            PaperProps={{
+              sx: {
+                backgroundColor: theme.palette.primary.main,
+                color: theme.palette.secondary.main,
+              },
+            }}
           >
             <IconButton
               style={{ marginTop: "1rem", marginLeft: "0.5rem" }}
               onClick={() => handleDrawerClose()}
             >
-              <Close style={{ color: "#eeeee4" }}></Close>
+              <Close style={{ color: theme.palette.secondary.main }}></Close>
             </IconButton>
             <List>
               {PAGES.map((item, index) => (
@@ -133,7 +116,9 @@ const Navbar = () => {
                   <ListItemIcon>
                     <ListItemText
                       primary={
-                        <Typography style={{ color: "#eeeee4" }}>
+                        <Typography
+                          style={{ color: theme.palette.secondary.main }}
+                        >
                           {item}
                         </Typography>
                       }
@@ -141,6 +126,13 @@ const Navbar = () => {
                   </ListItemIcon>
                 </ListItemButton>
               ))}
+                <ListItemButton onClick={() => handleDrawerClose()}>
+                  <ListItemIcon>
+                    <Button variant="outlined" color="secondary">
+                      Resume
+                    </Button>
+                  </ListItemIcon>
+                </ListItemButton>
             </List>
           </Drawer>
         </AppBar>
