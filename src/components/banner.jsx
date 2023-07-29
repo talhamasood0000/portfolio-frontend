@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from "react";
 import Vanta from "vanta/dist/vanta.net.min";
 import WAVES from "vanta/dist/vanta.waves.min";
 import GLOBE from "vanta/dist/vanta.globe.min";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Container } from "@mui/material";
+import theme from "@/pages/dashboard/theme";
 
 const Banner = () => {
   const [vantaEffect, setVantaEffect] = useState(null);
@@ -20,6 +21,12 @@ const Banner = () => {
           scale: 1.0,
           scaleMobile: 5.0,
           size: 1.0,
+          maxDistance: 20.0,
+          spacing: 15.0,
+          points: 20.0,
+          color: theme.palette.text.hint,
+          color2: theme.palette.background.paper,
+          backgroundColor: theme.palette.background.paper,
         })
       );
     }
@@ -30,59 +37,51 @@ const Banner = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          position: "relative",
-          height: "600px",
-        }}
-      >
+      <Box sx={{ height: "600px" }}>
         <div ref={myRef}>
-          <Box
-            sx={{
-              flexDirection: "column",
-              paddingLeft: "10%",
-              paddingTop: "10rem",
-            }}
-          >
-            <Typography variant="h6" gutterBottom sx={{ color: "#eeeee4" }}>
-              Hi, its me
-            </Typography>
-            <Typography
-              variant="h3"
-              gutterBottom
-              sx={{
-                fontFamily:
-                  "'Calibre','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif",
-                fontSize: "24px",
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.15rem",
-                color: "#eeeee4",
-              }}
-            >
-              My Name
-            </Typography>
-            <Typography
-              sx={{ color: "#eeeee4" }}
-              variant="subtitle1"
-              gutterBottom
-            >
-              Web Developer and Machine Learning Enthusiast
-            </Typography>
-            <Typography
-              sx={{ color: "#eeeee4" }}
-              variant="subtitle1"
-              gutterBottom
-            >
-              Highly motivated and organized electrical engineer having focus in
-              Machine Learning, Data Science and web development, capable of
-              leading a diverse team. I am seeking opportunities to gain
-              hands-on experience in solving real-world problems.
-            </Typography>
-            <Button variant="contained" color="primary">
-              Learn More
-            </Button>
-          </Box>
+          <Container>
+            <Box sx={{ paddingTop: "8%" }}>
+              <Typography variant="h3" gutterBottom>
+                Hi, its me
+              </Typography>
+              <Typography
+                variant="h1"
+                gutterBottom
+                sx={{
+                  textTransform: "uppercase",
+                  letterSpacing: "0.15rem",
+                }}
+              >
+                My Name
+              </Typography>
+              <Typography variant="h2" gutterBottom>
+                Web Developer and Machine Learning Enthusiast
+              </Typography>
+              <Typography variant="h4" gutterBottom maxWidth="65ch">
+                Highly motivated and organized electrical engineer having focus
+                in Machine Learning, Data Science and web development, capable
+                of leading a diverse team. I am seeking opportunities to gain
+                hands-on experience in solving real-world problems.
+              </Typography>
+              <Button
+                variant="outlined"
+                size="large"
+                style={{ width: "160px", height: "50px" }}
+                sx={{
+                  marginTop: "0.35rem",
+                  borderRadius: "4px",
+                  color: theme.palette.text.hint,
+                  borderColor: theme.palette.text.hint,
+                  "&:hover": {
+                    color: "white",
+                    borderColor: "white",
+                  },
+                }}
+              >
+                Learn More
+              </Button>
+            </Box>
+          </Container>
         </div>
       </Box>
     </>

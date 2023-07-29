@@ -1,78 +1,73 @@
 import { createTheme } from "@mui/material";
+const link = "https://coolors.co/264454-4c88a9-e40066-fae8eb-93a7b4";
+const background = "#264454";
+const largeText = "#93A7B4";
+const buttonColor = "#E40066";
+const smallText = "#4C88A9";
+const invertedColor = "#FAE8EB";
+
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#2196f3',
+    background: {
+      paper: background,
+      primary: invertedColor,
     },
-    secondary: {
-      main: '#f50057',
+    text: {
+      primary: largeText,
+      secondary: smallText,
+      hint: buttonColor,
+    },
+    info: {
+      main: largeText
+    }
+  },
+  typography: {
+    fontFamily: "'Roboto Slab', serif",
+    h1: {
+      fontSize: 40,
+      fontWeight: 600,
+      color: largeText,
+    },
+    h2: {
+      fontSize: 32,
+      fontWeight: 600,
+      color: largeText,
+      '@media (max-width:600px)': {
+        fontSize: 24, // Font size for h6 on screens with width 600px or greater
+      },
+      '@media (max-width:400px)': {
+        fontSize: 16, // Font size for h6 on screens with width 960px or greater
+      },
+    },
+    h3: {
+      fontSize: 20,
+      color: smallText,
+    },
+    h4: {
+      fontSize: 16,
+      color: smallText,
+    },
+    h5: {
+      fontSize: 14,
+      color: largeText,
+    },
+    body1: {
+      fontSize: 14,
+      color: largeText,
     },
   },
-  // typography: {
-  //   fontFamily: "Arial, sans-serif",
-  //   h1: {
-  //     fontSize: "2.5rem",
-  //     fontWeight: 500,
-  //     lineHeight: 1.2,
-  //   },
-  //   h2: {
-  //     fontSize: "2rem",
-  //     fontWeight: 500,
-  //     lineHeight: 1.3,
-  //   },
-  //   body1: {
-  //     fontSize: "1rem",
-  //     fontWeight: 400,
-  //     lineHeight: 1.4,
-  //   },
-  // },
-  // spacing: 8,
-  // shape: {
-  //   borderRadius: 4,
-  // },
   // components: {
-  //   MuiButton: {
+  //   MuiTab: {
   //     styleOverrides: {
-  //       root: {
-  //         textTransform: "none",
-  //         fontWeight: 600,
-  //       },
-  //     },
-  //   },
-  //   MuiAppBar: {
-  //     styleOverrides: {
-  //       root: {
-  //         backgroundColor: "#f5f5f5",
-  //       },
-  //     },
-  //   },
-  // },
-  // overrides: {
-  //   MuiCssBaseline: {
-  //     "@global": {
-  //       body: {
-  //         backgroundColor: "#f9f9f9",
-  //       },
-  //     },
-  //   },
-  // },
-  // props: {
-  //   MuiButton: {
-  //     variant: "contained",
-  //     color: "primary",
-  //   },
-  // },
-  // transitions: {
-  //   easing: {
-  //     easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
-  //   },
-  //   duration: {
-  //     shortest: 150,
-  //   },
-  // },
-  // zIndex: {
-  //   appBar: 1200,
-  // },
+  //       root:{
+  //         "&.Mui-selected": {
+  //           textColor: smallText,
+  //           color: smallText,
+  //         }
+  //       }
+  //     }
+  //       }
+  //     }
 });
 
 export default theme;

@@ -6,22 +6,27 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import Stack from "@mui/material/Stack";
+import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
+import theme from "@/pages/dashboard/theme";
+import image from "../../public/media/blog/image1.png"
+
 
 export default function Blogs() {
   return (
     <>
       <Box
-        sx={{ backgroundColor: "#063970", height: "600px" }}
+        sx={{ backgroundColor: theme.palette.background.paper, height: "600px" }}
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
       >
-        <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
+        <Container>
+        <Typography variant="h2" gutterBottom sx={{ textAlign: "center", marginBottom: "1.35em" }}>
           My Blogs
         </Typography>
         <Stack 
@@ -34,7 +39,7 @@ export default function Blogs() {
             <CardMedia
               component="img"
               height="194"
-              image="/static/images/cards/paella.jpg"
+              image={"/media/blog/image1.png"}
               alt="Paella dish"
             />
             <CardContent>
@@ -90,7 +95,7 @@ export default function Blogs() {
             <CardMedia
               component="img"
               height="194"
-              image="/static/images/cards/paella.jpg"
+              image={"/media/blog/image1.png"}
               alt="Paella dish"
             />
             <CardContent>
@@ -146,7 +151,7 @@ export default function Blogs() {
             <CardMedia
               component="img"
               height="194"
-              image="/static/images/cards/paella.jpg"
+              image={"/media/blog/image1.png"}
               alt="Paella dish"
             />
             <CardContent>
@@ -199,6 +204,7 @@ export default function Blogs() {
             </Collapse>
           </Card>
         </Stack>
+        </Container>
       </Box>
     </>
   );

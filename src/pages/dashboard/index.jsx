@@ -13,10 +13,10 @@ const Dashboard = () => {
       <ThemeProvider theme={theme}>
         <Stack>
           <Navbar />
-          {/* <Banner />
+          {/* <Banner /> */}
           <Projects />
-          <Blogs />
-          <Footer /> */}
+          {/* <Blogs /> */}
+          <Footer />
         </Stack>
       </ThemeProvider>
     </>
