@@ -3,6 +3,7 @@ import Banner from "@/components/banner";
 import Blogs from "@/components/blogs";
 import Footer from "@/components/layout/footer";
 import Projects from "@/components/projects";
+import AllProjects from "@/components/allProjects";
 import { Stack } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
@@ -13,9 +14,10 @@ const Dashboard = () => {
       <ThemeProvider theme={theme}>
         <Stack>
           <Navbar />
-          {/* <Banner /> */}
+          <Banner />
           <Projects />
-          {/* <Blogs /> */}
+          <AllProjects />
+          <Blogs />
           <Footer />
         </Stack>
       </ThemeProvider>

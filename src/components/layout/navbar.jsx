@@ -54,7 +54,7 @@ const tabIconButton = (theme) => ({
   marginRight: "0px",
 });
 
-const iconButton = (theme) => ({ 
+const iconButton = (theme) => ({
   paddingLeft: "0px",
   paddingRight: "0px",
 });
@@ -70,17 +70,21 @@ const NavBar = () => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <IconButton aria-label="menu" style={{ marginTop: "1rem" }}>
-        <Close style={{ color: theme.palette.text.hint }}></Close>
+        <Close sx={{ fontSize: "32px", color: theme.palette.text.hint }}></Close>
       </IconButton>
       <List>
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText
                 primary={
-                  <Typography variant="h5" gutterBottom>
-                    {item}
-                  </Typography>
+                  <>
+                    <Typography variant="subtitle2">0{index + 1}.</Typography>
+
+                    <Typography sx={tabButton} variant="h6">
+                      {item}
+                    </Typography>
+                  </>
                 }
               />
             </ListItemButton>
@@ -91,10 +95,17 @@ const NavBar = () => {
   );
 
   return (
-    <Box sx={{ display: "flex", height: "90px", alignItems: "center", backgroundColor: theme.palette.background.paper }}>
+    <Box
+      sx={{
+        display: "flex",
+        height: "90px",
+        alignItems: "center",
+        backgroundColor: theme.palette.background.paper,
+      }}
+    >
       <AppBar sx={appBar} elevation={0}>
         <Container>
-          <Toolbar sx={{paddingLeft: "0px", paddingRight: "0px"}}>
+          <Toolbar sx={{ paddingLeft: "0px", paddingRight: "0px" }}>
             <IconButton aria-label="menu" sx={iconButton}>
               <Image src={logo} alt="Logo" width={40} />
             </IconButton>
@@ -105,7 +116,7 @@ const NavBar = () => {
               onClick={handleDrawerToggle}
               sx={tabIconButton}
             >
-              <MenuIcon />
+              <MenuIcon sx={{ fontSize: "32px" }} />
             </IconButton>
             <Box
               sx={{
@@ -121,12 +132,16 @@ const NavBar = () => {
                   sx={{ color: "#fff", fontSize: "13px" }}
                   size="small"
                 >
-                  <Typography>0{index + 1}.</Typography>{" "}
-                  <Typography sx={tabButton}>{item}</Typography>
+                  <Typography variant="subtitle2">0{index + 1}.</Typography>
+                  <span style={{ marginLeft: "3px" }}>
+                    <Typography sx={tabButton} variant="subtitle2">
+                      {item}
+                    </Typography>
+                  </span>
                 </Button>
               ))}
               <Button variant="outlined" sx={resumeButton} size="small">
-                Resume
+                <Typography variant="button">Resume</Typography>
               </Button>
             </Box>
           </Toolbar>

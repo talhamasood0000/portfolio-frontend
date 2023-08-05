@@ -36,6 +36,8 @@ const footerContainer = (theme) => ({
 
 const footerHeading = {
   textAlign: "center",
+  marginBottom: "1.35rem", 
+  marginTop: "3.5rem"
 };
 
 const mailIcon = (theme) => ({
@@ -160,7 +162,7 @@ const Footer = () => {
           alignItems="center"
         >
           <Container sx={footerContainer}>
-            <Typography variant="h2" gutterBottom sx={footerHeading}>
+            <Typography variant="h4" gutterBottom sx={footerHeading}>
               Connect With Me
             </Typography>
           </Container>

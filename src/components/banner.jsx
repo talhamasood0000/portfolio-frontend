@@ -41,11 +41,11 @@ const Banner = () => {
         <div ref={myRef}>
           <Container>
             <Box sx={{ paddingTop: "8%" }}>
-              <Typography variant="h3" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 Hi, its me
               </Typography>
               <Typography
-                variant="h1"
+                variant="h3"
                 gutterBottom
                 sx={{
                   textTransform: "uppercase",
@@ -54,10 +54,10 @@ const Banner = () => {
               >
                 My Name
               </Typography>
-              <Typography variant="h2" gutterBottom>
+              <Typography variant="h4" gutterBottom>
                 Web Developer and Machine Learning Enthusiast
               </Typography>
-              <Typography variant="h4" gutterBottom maxWidth="65ch">
+              <Typography variant="body1" gutterBottom maxWidth="65ch">
                 Highly motivated and organized electrical engineer having focus
                 in Machine Learning, Data Science and web development, capable
                 of leading a diverse team. I am seeking opportunities to gain
@@ -70,7 +70,6 @@ const Banner = () => {
                 sx={{
                   marginTop: "0.35rem",
                   borderRadius: "4px",
-                  color: theme.palette.text.hint,
                   borderColor: theme.palette.text.hint,
                   "&:hover": {
                     color: "white",
@@ -78,7 +77,8 @@ const Banner = () => {
                   },
                 }}
               >
-                Learn More
+                <Typography variant="button">Learn More</Typography>
+                
               </Button>
             </Box>
           </Container>

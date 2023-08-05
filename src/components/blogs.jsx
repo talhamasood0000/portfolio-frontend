@@ -14,28 +14,37 @@ import ShareIcon from "@mui/icons-material/Share";
 import theme from "@/pages/dashboard/theme";
 import image from "../../public/media/blog/image1.png"
 
+const cardStack = (theme) => ({
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  }
+})
+
+const blogCard = (theme) => ({ 
+  maxWidth: 345,
+  marginBottom: "10px",
+  boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
+})
 
 export default function Blogs() {
   return (
     <>
       <Box
-        sx={{ backgroundColor: theme.palette.background.paper, height: "600px" }}
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
+        sx={{ backgroundColor: theme.palette.background.paper}}
       >
         <Container>
         <Typography variant="h2" gutterBottom sx={{ textAlign: "center", marginBottom: "1.35em" }}>
           My Blogs
         </Typography>
-        <Stack 
+        <Stack
+          sx={cardStack}
           direction="row"
           justifyContent="center"
           alignItems="flex-start"
-          spacing={3}
         >
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={blogCard}>
             <CardMedia
               component="img"
               height="194"
@@ -91,7 +100,7 @@ export default function Blogs() {
               </CardContent>
             </Collapse>
           </Card>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={blogCard}>
             <CardMedia
               component="img"
               height="194"
@@ -147,7 +156,7 @@ export default function Blogs() {
               </CardContent>
             </Collapse>
           </Card>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={blogCard}>
             <CardMedia
               component="img"
               height="194"

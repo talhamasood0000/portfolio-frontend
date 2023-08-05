@@ -40,34 +40,26 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontSize: 20,
-      color: smallText,
-    },
+      fontWeight: 600,
+      color: largeText,
+    }, // for name in banner
     h4: {
-      fontSize: 16,
+      fontWeight: 600,
+      color: largeText,
+    }, // for Web Developer and Machine Learning Enthusiast
+    h6: {
       color: smallText,
-    },
-    h5: {
-      fontSize: 14,
-      color: largeText,
-    },
+    }, // for hi, its me
+    button: {
+      color: buttonColor,
+    }, // for buttons
     body1: {
-      fontSize: 14,
       color: largeText,
-    },
+    }, // for paragraphs
+    subtitle2: {
+      color: buttonColor,
+    }, // for navbar
   },
-  // components: {
-  //   MuiTab: {
-  //     styleOverrides: {
-  //       root:{
-  //         "&.Mui-selected": {
-  //           textColor: smallText,
-  //           color: smallText,
-  //         }
-  //       }
-  //     }
-  //       }
-  //     }
 });
 
 export default theme;

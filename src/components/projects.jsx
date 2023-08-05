@@ -4,6 +4,7 @@ import {
   Stack,
   Container,
   Typography,
+  Divider,
 } from "@mui/material";
 import theme from "@/pages/dashboard/theme";
 import ProjectDetails from "./projectDetails";
@@ -20,10 +21,11 @@ const Projects = () => {
       justifyContent="center"
     >
       <Container>
+        
         <Typography
-          variant="h2"
+          variant="h4"
           gutterBottom
-          sx={{ textAlign: "center", marginBottom: "3.35em", marginTop: "5.5rem" }}
+          sx={{ textAlign: "center", marginBottom: "4.35rem", marginTop: "5.5rem" }}
         >
           My Projects
         </Typography>
